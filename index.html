@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Introduction</title>
+</head>
+<body>
+    <div class="wrapper d-flex flex-column">
+        <div class="main d-flex flex-grow-1">
+            <div class="content">
+                <nav class="navbar navbar-light bg-light shadow-sm">
+                    <a class="navbar-brand text-uppercase" href="#">Introduction</a>
+                </nav>
+                <div class="container-fluid py-2">
+                    <div class="shadow-lg p-5 mb-5 bg-white rounded">
+                        <h2>Hello, TypeScript</h2>
+                        <hr>
+                        <p>This repo serves as a showcase of my learning process and knowledge on TypeScript. In this section I am briefly introduced to TypeScript and how to install it and run a <em>.ts</em> file.</p>
+                        <section>                                    
+                            <h5><b>Code</b></h5>
+                            <p>
+                                Here, we created a simple calculator that is triggered via an event listener on the <em><b>Add!</b></em> button below. Below is the TypeScript code for
+                                the simple calculator.
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> button <span style="color: #339933;">=</span> document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;calculator-add-button&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> input1 <span style="color: #339933;">=</span> document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;num1&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">!</span> as HTMLInputElement<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> input2 <span style="color: #339933;">=</span> document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;num2&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">!</span> as HTMLInputElement<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> add <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span>num1<span style="color: #339933;">:</span> number<span style="color: #339933;">,</span> num2<span style="color: #339933;">:</span> number<span style="color: #009900;">&#41;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #000066; font-weight: bold;">return</span> num1 <span style="color: #339933;">+</span> num2<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">button.<span style="color: #660066;">addEventListener</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;click&quot;</span><span style="color: #339933;">,</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #000066; font-weight: bold;">const</span> calculator_result_span <span style="color: #339933;">=</span> document.<span style="color: #660066;">getElementById</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;calculator-result-span&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    calculator_result_span.<span style="color: #660066;">innerText</span> <span style="color: #339933;">=</span> `RESULT<span style="color: #339933;">:</span> $<span style="color: #009900;">&#123;</span>add<span style="color: #009900;">&#40;</span><span style="color: #339933;">+</span>input1.<span style="color: #660066;">value</span><span style="color: #339933;">,</span> <span style="color: #339933;">+</span>input2.<span style="color: #660066;">value</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#125;</span>`<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li></ol></pre>
+                            </div>
+                            <p>Simple Calculator UI:</p>
+                            <div class="d-flex flex-column justify-content-center align-items-center border rounded mb-3">
+                                <div class="form-group my-2">
+                                    <input class="form-control" type="number" id="num1" min="0" placeholder="Number 1" />
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="number" id="num2" min="0" placeholder="Number 2" />
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm" id="calculator-add-button">Add!</button>
+                                <span class="my-2 text-success text-uppercase" id="calculator-result-span">Result: 3</span>
+                            </div>
+                            <p>To run the <em>.ts</em> file we need to compile it via the command:</p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="text" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">tsc assets/scripts/first-app.ts</div></li></ol></pre>
+                            </div>
+                        </section>
+                        <div class="d-flex flex-row justify-content-end align-items-center">
+                            <div class="p-2"><a class="btn btn-outline-success btn-sm" href="/Lesson 01 - Basics" role="button">Start >></a></div>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="sidebar p-4">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link text-white active" href="/">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 01 - Basics">TypeScript Basics & Basic Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 02 - TypeScript Compiler">The TypeScript Compiler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 03 - JavaScript|TypeScript">Next-generation JavaScript & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 04 - Classes|Interfaces">Classes & Interfaces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 05 - Advanced Types">Advanced Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 06 - Generics">Generics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 07 - Decorators">Decorators</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 08 - Modules|Namespaces">Modules & Namespaces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 09 - Webpack|TypeScript">Using Webpack With TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 10 - Libraries|TypeScript">3rd Party Libraries & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 11 - React|TypeScript">React.js & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 12 - Node|Express|TypeScript">Node.js + Express & TypeScript</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="assets/scripts/first-app.js"></script>
+</body>
+</html>
