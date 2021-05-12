@@ -1,0 +1,15 @@
+{
+  "name": "typescript-lessons",
+  "version": "1.0.0",
+  "description": "Sample typescript app",
+  "main": "app.js",
+  "scripts": {
+    "serve": "live-server --port=8090 --quiet",
+    "compile:type": "tsc app.ts"
+  },
+  "author": "Peter Kitonga",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
