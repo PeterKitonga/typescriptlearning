@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <title>The TypeScript Compiler</title>
+</head>
+<body>
+    <div class="wrapper d-flex flex-column">
+        <div class="main d-flex flex-grow-1">
+            <div class="content">
+                <nav class="navbar navbar-light bg-light shadow-sm">
+                    <a class="navbar-brand text-uppercase" href="#">The TypeScript Compiler</a>
+                </nav>
+                <div class="container-fluid py-2">
+                    <div class="shadow-lg p-5 mb-5 bg-white rounded">
+                        <h2>The TypeScript Compiler</h2>
+                        <hr>
+                        <p>
+                            In this section I learn how to configure and use the compiler for TypeScript.
+                        </p>
+                        <hr>
+                        
+                        <section>
+                            <h5><b>Using watch mode</b></h5>
+                            <p>
+                                To compile a TypeScript file we run <em><code>tsc [name of file].ts</code></em>. This generates a new <em><code>.js</code></em> file of the same name. However, this can be tidious to do every time we change our TypeScript file.
+                                For that we add a flag <em><code>--watch</code></em> to the command which will run the compiler in watch mode. We can add this to the <em><code>package.json</code></em> file like so:
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="text" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">{</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;name&quot;: &quot;typescript-lessons&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;version&quot;: &quot;1.0.0&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;description&quot;: &quot;Sample typescript app&quot;,</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;main&quot;: &quot;app.js&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;scripts&quot;: {</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;serve&quot;: &quot;live-server --port=8090 --quiet&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;compile:type&quot;: &quot;tsc app.ts --watch&quot;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  },</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;author&quot;: &quot;Peter Kitonga&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;license&quot;: &quot;ISC&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;devDependencies&quot;: {</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;live-server&quot;: &quot;^1.2.1&quot;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  }</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">}</div></li></ol></pre>
+                            </div>
+                        </section>
+                        
+                        <section>
+                            <h5><b>Compiling entire projects</b></h5>
+                            <p>
+                                The script in the above section makes it easier to watch for changes in a specific file. This however will now work well for entire projects with multiple TypeScript files. To solve this we initialize a TypeScript configuration file
+                                via the command <em><code>tsc --init</code></em>. This generates a file in the project root folder called <em><code>tsconfig.json</code></em>. This inturn allows us to just run <em><code>tsc --watch</code></em> which will watch for
+                                changes made in any TypeScript file in the same project folder. This means we can modify our <em><code>package.json</code></em> file to:
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="text" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">{</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;name&quot;: &quot;typescript-lessons&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;version&quot;: &quot;1.0.0&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;description&quot;: &quot;Sample typescript app&quot;,</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;main&quot;: &quot;app.js&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;scripts&quot;: {</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;serve&quot;: &quot;live-server --port=8090 --quiet&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;compile:type&quot;: &quot;tsc --watch&quot;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  },</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;author&quot;: &quot;Peter Kitonga&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;license&quot;: &quot;ISC&quot;,</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;devDependencies&quot;: {</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;live-server&quot;: &quot;^1.2.1&quot;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  }</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">}</div></li></ol></pre>
+                            </div>
+                        </section>
+                        
+                        <section>
+                            <h5><b>Including and Excluding files</b></h5>
+                            <p>
+                                There are a number of configurations that can be added to the <em><code>tsconfig.json</code></em>. One of the configurations is including and excluding files where we tell TypeScript to exclude compilation of the listed files and include only the listed files for compilation.
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="text" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">{</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;compilerOptions&quot;: {</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    // ...compile configurations here</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  },</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;exclude&quot;: [</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;node_modules&quot;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  ],</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  &quot;include&quot;: [</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    &quot;app.ts&quot;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  ]</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">}</div></li></ol></pre>
+                            </div>
+                        </section>
+                        
+                        <section>
+                            <h5><b>More configuration options</b></h5>
+                            <p>
+                                For more configuration options <a href="https://aka.ms/tsconfig.json" target="_blank">visit here &rarr;</a>
+                            </p>
+                        </section>
+                        
+                        <section>
+                            <h5><b>Try it</b></h5>
+                            <p>
+                              To run the app, in your terminal run the following commands:
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="text" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd Lesson\ 02\ -\ TypeScript\ Compiler/app/</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">npm install // if you have not installed dependencies</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">npm run compile:type // compiles typescript to common js</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">npm run serve // starts application</div></li></ol></pre>
+                            </div>
+                          </section>
+                        
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <div class="p-2"><a class="btn btn-outline-primary btn-sm" href="/Lesson 01 - Basics" role="button">&lt;&lt; Back</a></div>
+                            <div class="p-2"><a class="btn btn-outline-success btn-sm" href="/Lesson 03 - JavaScript|TypeScript" role="button">Next &gt;&gt;</a></div>             
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="sidebar p-4">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 01 - Basics">TypeScript Basics & Basic Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="/Lesson 02 - TypeScript Compiler">The TypeScript Compiler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 03 - JavaScript|TypeScript">Next-generation JavaScript & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 04 - Classes|Interfaces">Classes & Interfaces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 05 - Advanced Types">Advanced Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 06 - Generics">Generics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 07 - Decorators">Decorators</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 08 - Modules|Namespaces">Modules & Namespaces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 09 - Webpack|TypeScript">Using Webpack With TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 10 - Libraries|TypeScript">3rd Party Libraries & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 11 - React|TypeScript">React.js & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 12 - Node|Express|TypeScript">Node.js + Express & TypeScript</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
