@@ -2,7 +2,7 @@
 
 ### Brief
 
-This repo demonstrates the lessons I went through while learning typescript. The purpose of learning this is to better and cleaner javascript code for both front-end and back-end. 
+This repo demonstrates the lessons I went through while learning typescript. The purpose of learning this is to write better and cleaner javascript code for both front-end and back-end. 
 
 ### Setup
 
