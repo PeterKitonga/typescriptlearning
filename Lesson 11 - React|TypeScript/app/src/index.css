@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px, 10px/16px * 100% = 62.5% */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.todo {
+  width: 90%;
+  margin: 0 auto;
+  list-style: none;
+  background-color: aliceblue;
+}
+
+.todo__item {
+  margin: .8rem 0;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 .2rem .8rem rgba(0, 0, 0, .2);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo__item-btn {
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: .4rem 1rem;
+  border-radius: .4rem;
+  background-color: orange;
+  box-shadow: 0 .2rem .8rem rgba(0, 0, 0, .2);
+}
+
+.todo-form {
+  width: 90%;
+  padding: 8rem 0;
+  font-size: 1.6rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: .4rem;
+  border: 1px solid aliceblue;
+}
+
+.todo-form__group {
+  width: auto;
+  margin: 0 2rem 2rem 2rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.todo-form__group-label {
+  font-size: inherit;
+  margin-bottom: .8rem;
+  text-transform: uppercase;
+}
+
+.todo-form__group-control {
+  font-size: inherit;
+  padding: 1.4rem 2rem;
+  border-radius: .4rem;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.todo-form__submit {
+  border: none;
+  cursor: pointer;
+  padding: 1.4rem 2rem;
+  border-radius: .4rem;
+  background-color: aliceblue;
+  box-shadow: 0 .2rem .8rem rgba(0, 0, 0, .2);
+}

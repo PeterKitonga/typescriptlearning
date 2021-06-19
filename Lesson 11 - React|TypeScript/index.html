@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <title>React.js & TypeScript</title>
+</head>
+<body>
+    <div class="wrapper d-flex flex-column">
+        <div class="main d-flex flex-grow-1">
+            <div class="content">
+                <nav class="navbar navbar-light bg-light shadow-sm">
+                    <a class="navbar-brand text-uppercase" href="#">React.js & TypeScript</a>
+                </nav>
+                <div class="container-fluid py-2">
+                    <div class="shadow-lg p-5 mb-5 bg-white rounded">
+                        <h2>React.js & TypeScript</h2>
+                        <hr>
+                        <p>
+                            In this section I learned how to use TypeScript in React.js. React.js is a very popular frontend framework with tones of features and configurability. It uses a component based for creating Single Page Applications(SPAs). Alternatives to React.js are Angular, Vue, Ember, Svelte.
+                        </p>
+                        <hr>
+                        
+                        <section>                                    
+                            <h5><b>Type assignment for Function Components</b></h5>
+                            <p>
+                                In React, TypeScript offers type safety which can be used to assist us during development. In this case we want to tell TypeScript that our component returns a function by infering it to the <code>React.FC</code> type.
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #FF0000;">import</span> React from <span style="color: #3366CC;">'react'</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> App<span style="color: #339933;">:</span> React.<span style="color: #660066;">FC</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">=&gt;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #009900;">&#40;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #339933;">&lt;</span>div className<span style="color: #339933;">=</span><span style="color: #3366CC;">&quot;App&quot;</span><span style="color: #339933;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #339933;">&lt;/</span>div<span style="color: #339933;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #FF0000;">export</span> <span style="color: #000066; font-weight: bold;">default</span> App<span style="color: #339933;">;</span></div></li></ol></pre>
+                            </div>
+                        </section>
+                        
+                        <section>                                    
+                            <h5><b>Defining interfaces for props</b></h5>
+                            <p>
+                                In React, props are used as a store of value accross different components. They pass data from a parent component to its child components which can be retrieved within the child component for manipulation and rendering. For this to work we need to tell TypeScript what to expect as a prop and its types. For example, below we are telling TypeScript that our component <code>TodoList</code> expects a prop called <code>items</code> which is an array of objects. This is then passed as a generic type to the function component.
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #FF0000;">import</span> React from <span style="color: #3366CC;">&quot;react&quot;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #FF0000;">interface</span> TodoListProps <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    items<span style="color: #339933;">:</span> <span style="color: #009900;">&#123;</span> _id<span style="color: #339933;">:</span> string<span style="color: #339933;">,</span> text<span style="color: #339933;">:</span> string <span style="color: #009900;">&#125;</span><span style="color: #009900;">&#91;</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> TodoList<span style="color: #339933;">:</span> React.<span style="color: #660066;">FC</span><span style="color: #339933;">&lt;</span>TodoListProps<span style="color: #339933;">&gt;</span> <span style="color: #339933;">=</span> props <span style="color: #339933;">=&gt;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #009900;">&#40;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #339933;">&lt;</span>ul<span style="color: #339933;">&gt;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            <span style="color: #009900;">&#123;</span>props.<span style="color: #660066;">items</span>.<span style="color: #660066;">map</span><span style="color: #009900;">&#40;</span>item <span style="color: #339933;">=&gt;</span> <span style="color: #339933;">&lt;</span>li key<span style="color: #339933;">=</span><span style="color: #009900;">&#123;</span>item._id<span style="color: #009900;">&#125;</span><span style="color: #339933;">&gt;</span><span style="color: #009900;">&#123;</span>item.<span style="color: #660066;">text</span><span style="color: #009900;">&#125;</span><span style="color: #339933;">&lt;/</span>li<span style="color: #339933;">&gt;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #339933;">&lt;/</span>ul<span style="color: #339933;">&gt;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #FF0000;">export</span> <span style="color: #000066; font-weight: bold;">default</span> TodoList<span style="color: #339933;">;</span></div></li></ol></pre>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h5><b>Try it</b></h5>
+                            <p>
+                              To run the app, in your terminal run the following commands:
+                            </p>
+                            <div class="p-3 my-3 bg-light">
+                                <pre class="text" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd Lesson\ 11\ -\ React\|TypeScript/app/</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">npm install // if you have not installed dependencies</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">npm start // starts application</div></li></ol></pre>
+                            </div>
+                          </section>
+                        
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            <div class="p-2"><a class="btn btn-outline-primary btn-sm" href="/Lesson 10 - Libraries|TypeScript" role="button">&lt;&lt; Back</a></div>
+                            <div class="p-2"><a class="btn btn-outline-success btn-sm" href="/Lesson 12 - Node|Express|TypeScript" role="button">Next &gt;&gt;</a></div>             
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="sidebar p-4">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 01 - Basics">TypeScript Basics & Basic Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 02 - TypeScript Compiler">The TypeScript Compiler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 03 - JavaScript|TypeScript">Next-generation JavaScript & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 04 - Classes|Interfaces">Classes & Interfaces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 05 - Advanced Types">Advanced Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 06 - Generics">Generics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 07 - Decorators">Decorators</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 08 - Modules|Namespaces">Modules & Namespaces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 09 - Webpack|TypeScript">Using Webpack With TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 10 - Libraries|TypeScript">3rd Party Libraries & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="/Lesson 11 - React|TypeScript">React.js & TypeScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/Lesson 12 - Node|Express|TypeScript">Node.js + Express & TypeScript</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
